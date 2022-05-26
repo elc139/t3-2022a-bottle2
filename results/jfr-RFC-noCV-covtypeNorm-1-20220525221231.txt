@@ -1,0 +1,50 @@
+[0.398s][info][jfr,startup] Started recording 1. No limit specified, using maxsize=250MB as default.
+[0.398s][info][jfr,startup] 
+[0.398s][info][jfr,startup] Use jcmd 3336 JFR.dump name=1 to copy recording data to file.
+
+Options: -dont-fetch-model -learner RandomForestClassifier -parameters max_depth=16,max_samples=1.0,n_jobs=1 -py-command python3 
+
+=== Classifier model (full training set) ===
+
+RandomForestClassifier(max_depth=16, max_samples=1.0, n_jobs=1)
+
+Time taken to build model: 77.64 seconds
+
+Time taken to test model on test split: 4.68 seconds
+
+=== Error on test split ===
+
+Correctly Classified Instances       97980               84.3187 %
+Incorrectly Classified Instances     18222               15.6813 %
+Kappa statistic                          0.7428
+Mean absolute error                      0.0907
+Root mean squared error                  0.1878
+Relative absolute error                 50.8847 %
+Root relative squared error             62.8568 %
+Total Number of Instances           116202     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.798    0.080    0.852      0.798    0.824      0.729    0.950     0.927     1
+                 0.905    0.186    0.821      0.905    0.861      0.720    0.946     0.938     2
+                 0.905    0.008    0.888      0.905    0.897      0.890    0.997     0.960     3
+                 0.797    0.000    0.916      0.797    0.852      0.854    0.999     0.913     4
+                 0.218    0.000    0.943      0.218    0.354      0.450    0.988     0.758     5
+                 0.659    0.002    0.901      0.659    0.761      0.765    0.994     0.879     6
+                 0.806    0.001    0.978      0.806    0.884      0.884    0.998     0.960     7
+Weighted Avg.    0.843    0.120    0.847      0.843    0.839      0.737    0.955     0.931     
+
+
+=== Confusion Matrix ===
+
+     a     b     c     d     e     f     g   <-- classified as
+ 33921  8502     5     0     0     0    65 |     a = 1
+  5070 50985   205     0    24    69     9 |     b = 2
+     0   504  6596    19     0   167     0 |     c = 3
+     0     0    94   416     0    12     0 |     d = 4
+    16  1430    30     0   412     3     0 |     e = 5
+     2   670   497    19     1  2297     0 |     f = 6
+   792    17     0     0     0     0  3353 |     g = 7
+

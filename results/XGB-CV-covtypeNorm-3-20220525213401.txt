@@ -1,0 +1,95 @@
+
+Options: -learner XGBClassifier -parameters tree_method='hist',n_jobs=3 -py-command python3 
+
+=== Classifier model (full training set) ===
+
+XGBClassifier(base_score=0.5, booster='gbtree', callbacks=None,
+              colsample_bylevel=1, colsample_bynode=1, colsample_bytree=1,
+              early_stopping_rounds=None, enable_categorical=False,
+              eval_metric=None, gamma=0, gpu_id=-1, grow_policy='depthwise',
+              importance_type=None, interaction_constraints='',
+              learning_rate=0.300000012, max_bin=256, max_cat_to_onehot=4,
+              max_delta_step=0, max_depth=6, max_leaves=0, min_child_weight=1,
+              missing=nan, monotone_constraints='()', n_estimators=100,
+              n_jobs=3, num_parallel_tree=1, objective='multi:softprob',
+              predictor='auto', random_state=0, reg_alpha=0, ...)
+
+Time taken to build model: 40.56 seconds
+
+Time taken to test model on training data: 17.55 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances      512060               88.1324 %
+Incorrectly Classified Instances     68952               11.8676 %
+Kappa statistic                          0.8083
+Mean absolute error                      0.062 
+Root mean squared error                  0.1594
+Relative absolute error                 34.8541 %
+Root relative squared error             53.4245 %
+Total Number of Instances           581012     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.850    0.071    0.873      0.850    0.861      0.783    0.966     0.946     1
+                 0.905    0.121    0.877      0.905    0.891      0.783    0.963     0.961     2
+                 0.926    0.005    0.919      0.926    0.922      0.917    0.999     0.979     3
+                 0.954    0.000    0.941      0.954    0.947      0.947    1.000     0.989     4
+                 0.632    0.001    0.915      0.632    0.748      0.758    0.996     0.870     5
+                 0.849    0.004    0.875      0.849    0.861      0.857    0.998     0.941     6
+                 0.935    0.002    0.956      0.935    0.945      0.944    1.000     0.989     7
+Weighted Avg.    0.881    0.086    0.882      0.881    0.881      0.800    0.969     0.956     
+
+
+=== Confusion Matrix ===
+
+      a      b      c      d      e      f      g   <-- classified as
+ 180090  30848      5      0     73     14    810 |      a = 1
+  24850 256337    937      1    472    630     74 |      b = 2
+      0   1139  33091    112      5   1407      0 |      c = 3
+      0      1     94   2620      0     32      0 |      d = 4
+     92   3229    140      0   6002     30      0 |      e = 5
+     21    825   1727     51      5  14738      0 |      f = 6
+   1299     29      0      0      0      0  19182 |      g = 7
+
+Time taken to perform cross-validation: 403.26 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances      505210               86.9535 %
+Incorrectly Classified Instances     75802               13.0465 %
+Kappa statistic                          0.7891
+Mean absolute error                      0.0647
+Root mean squared error                  0.1655
+Relative absolute error                 36.3234 %
+Root relative squared error             55.4616 %
+Total Number of Instances           581012     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.840    0.078    0.861      0.840    0.850      0.766    0.961     0.938     1
+                 0.895    0.131    0.867      0.895    0.881      0.765    0.957     0.954     2
+                 0.914    0.007    0.899      0.914    0.907      0.900    0.998     0.970     3
+                 0.880    0.000    0.900      0.880    0.890      0.889    1.000     0.955     4
+                 0.582    0.001    0.890      0.582    0.704      0.716    0.995     0.835     5
+                 0.812    0.004    0.851      0.812    0.831      0.826    0.997     0.917     6
+                 0.916    0.002    0.946      0.916    0.931      0.928    0.999     0.981     7
+Weighted Avg.    0.870    0.093    0.870      0.870    0.869      0.781    0.964     0.947     
+
+
+=== Confusion Matrix ===
+
+      a      b      c      d      e      f      g   <-- classified as
+ 178022  32732      6      0     84     33    963 |      a = 1
+  27010 253681   1138      0    580    782    110 |      b = 2
+     10   1357  32675    184      7   1521      0 |      c = 3
+      0      1    246   2416      0     84      0 |      d = 4
+     98   3669    163      0   5521     41      1 |      e = 5
+     27   1041   2102     85      9  14103      0 |      f = 6
+   1655     63      0      0      0      0  18792 |      g = 7
+
